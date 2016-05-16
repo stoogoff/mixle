@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-16"?>
+<level xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<number>18</number>
+	<par>28</par>
+	<size>4</size>
+	<sequence>RED GREEN BLUE PURPLE</sequence>
+	<shuffle>true</shuffle>
+	<grid>0 3 1 1 0 1 0 2 3 1 0 0 2 1 0 1</grid>
+	<target>2 3 3 3 2 3 2 3 2 3 2 3 2 2 2 3</target>
+</level>

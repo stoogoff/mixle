@@ -8,6 +8,7 @@ using evolve.Screens;
 using Mixle.Components;
 using Mixle.Config;
 using Mixle.Entities;
+using Mixle.Levels;
 using Mixle.Text;
 using Mixle.Views;
 
@@ -15,7 +16,9 @@ namespace Mixle.Screens {
 	public class GamePlay: Screen {
 		protected Grid grid;
 		protected Target target;
+		protected int currentLevel = 0;
 		protected Level level;
+		protected LevelLoader loader;
 		protected Sequence sequence;
 		protected Score score;
 		protected IList<PositionedText> texts = new List<PositionedText>();
@@ -28,24 +31,9 @@ namespace Mixle.Screens {
 			target = new Target(game);
 			sequence = new Sequence(game);
 			score = new Score();
+			loader = new LevelLoader();
 
-			/*level = new Level() {
-				Par = 4,
-				Size = 2,
-				Sequence = new string[] { "RED", "GREEN", "BLUE" },
-				Shuffle = true,
-				Grid = new int[] { 0, 0, 1, 1 },
-				Target = new int[] { 1, 1, 2, 2 },
-			};*/
-			level = new Level() {
-				Number = 1,
-				Par = 8,
-				Size = 3,
-				Sequence = new string[] { "RED", "GREEN", "BLUE" },
-				Shuffle = true,
-				Grid = new int[] { 1, 2, 1, 2, 2, 0, 1, 1, 1 },
-				Target = new int[] { 1, 0, 1, 0, 0, 0, 1, 0, 1 },
-			};
+			level = loader.NextLevel(currentLevel);
 
 			var textX = Dimensions.PlayArea + Dimensions.Pad + Dimensions.PadHalf;
 
@@ -88,7 +76,8 @@ namespace Mixle.Screens {
 		protected void NextLevel() {
 			score.EndLevel(level.Par);
 
-			// TODO get next level
+			// TODO bounds check level
+			level = loader.NextLevel(++currentLevel);
 
 			LoadLevel();
 		}
@@ -115,7 +104,7 @@ namespace Mixle.Screens {
 			if(level.IsComplete(current)) {
 				// TODO sfx
 				// TODO show overlay
-				Console.WriteLine("Complete");
+				NextLevel();
 			}
 
 			activated = evt.Active;
