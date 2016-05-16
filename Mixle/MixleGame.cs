@@ -20,8 +20,8 @@ namespace Mixle {
 
 			// TODO device dependant
 			graphics.IsFullScreen = false;
-			graphics.PreferredBackBufferWidth = Sizes.ScreenWidth;
-			graphics.PreferredBackBufferHeight = Sizes.ScreenHeight;
+			graphics.PreferredBackBufferWidth = Dimensions.ScreenWidth;
+			graphics.PreferredBackBufferHeight = Dimensions.ScreenHeight;
 
 			IsMouseVisible = true;
 		}
@@ -39,6 +39,36 @@ namespace Mixle {
 			renderer = new SpriteBatch(GraphicsDevice);
 
 			screens.LoadContent();
+
+			/*var levels = new List<Mixle.Entities.Level>()
+			{
+				new Mixle.Entities.Level() {
+					Number = 1,
+					Par = 4,
+					Size = 2,
+					Sequence = new string[] { "RED", "GREEN", "BLUE" },
+					Shuffle = true,
+					Grid = new int[] { 0, 0, 1, 1 },
+					Target = new int[] { 1, 1, 2, 2 },
+				},
+				new Mixle.Entities.Level() {
+					Number = 2,
+					Par = 8,
+					Size = 3,
+					Sequence = new string[] { "RED", "GREEN", "BLUE" },
+					Shuffle = true,
+					Grid = new int[] { 1, 2, 1, 2, 2, 0, 1, 1, 1 },
+					Target = new int[] { 1, 0, 1, 0, 0, 0, 1, 0, 1 },
+				}
+			};
+
+			XmlWriterSettings settings = new XmlWriterSettings();
+			settings.Indent = true;
+
+			using( XmlWriter writer = XmlWriter.Create( "Levels.xml", settings ) )
+			{
+				Microsoft.Xna.Framework.Content.Pipeline.Serialization.Intermediate.IntermediateSerializer.Serialize( writer, levels, null );
+			}*/
 		}
 
 		protected override void Update(GameTime time) {

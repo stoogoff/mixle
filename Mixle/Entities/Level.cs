@@ -1,12 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
 using Microsoft.Xna.Framework;
-using Mixle.Config;
 
 namespace Mixle.Entities {
 	public class Level {
 		public Level() { }
 
+		public int Number { get; set; }
 		public int Par { get; set; }
 		public int Size { get; set; }
 		public bool Shuffle { get; set; }

@@ -1,11 +1,14 @@
-﻿using System;
-using Microsoft.Xna.Framework;
+﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
-using evolve.Components;
 
-namespace Mixle.Views {
+namespace evolve.Components {
 	public class ImageView: IView {
 		protected Rectangle position;
+		protected Color colour = Color.White;
+
+		public ImageView() {
+			Visible = false;
+		}
 
 		public ImageView(Texture2D image, Rectangle position) {
 			Visible = true;
@@ -24,7 +27,7 @@ namespace Mixle.Views {
 				return;
 			}
 
-			renderer.Draw(Image, position, Color.White);
+			renderer.Draw(Image, position, colour);
 		}
 	}
 }

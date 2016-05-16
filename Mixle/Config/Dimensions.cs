@@ -2,7 +2,7 @@
 
 namespace Mixle.Config {
 	// TODO these need to come from a config file for easy update between devices
-	public static class Sizes {
+	public static class Dimensions {
 		public static int ScreenWidth {
 			get {
 				return 800;
@@ -19,6 +19,12 @@ namespace Mixle.Config {
 		public static int Pad {
 			get {
 				return 20;
+			}
+		}
+
+		public static int PadHalf {
+			get {
+				return Pad / 2;
 			}
 		}
 
@@ -46,6 +52,12 @@ namespace Mixle.Config {
 		public static int SequenceHeight {
 			get {
 				return 20;
+			}
+		}
+
+		public static int TextPadding {
+			get {
+				return 40;
 			}
 		}
 	}

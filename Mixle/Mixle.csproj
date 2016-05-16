@@ -54,30 +54,40 @@
     <Compile Include="Screens\Loading.cs" />
     <Compile Include="Screens\StartMenu.cs" />
     <Compile Include="Screens\GameOver.cs" />
-    <Compile Include="Entities\Level.cs" />
-    <Compile Include="Config\ColourSequence.cs" />
     <Compile Include="Components\Sequence.cs" />
     <Compile Include="Components\Grid.cs" />
-    <Compile Include="Config\Sizes.cs" />
     <Compile Include="Animations\Animator.cs" />
     <Compile Include="Animations\IAnimation.cs" />
-    <Compile Include="Entities\Area.cs" />
     <Compile Include="Animations\LeftAnimation.cs" />
     <Compile Include="Animations\TopAnimation.cs" />
     <Compile Include="Animations\AbstractAnimation.cs" />
     <Compile Include="Animations\HeightAnimation.cs" />
     <Compile Include="Animations\WidthAnimation.cs" />
     <Compile Include="Components\Target.cs" />
-    <Compile Include="Entities\GridBlock.cs" />
-    <Compile Include="Entities\TargetBlock.cs" />
+    <Compile Include="Views\Sidebar.cs" />
+    <Compile Include="Views\TextCollection.cs" />
+    <Compile Include="Config\Dimensions.cs" />
+    <Compile Include="Text\PositionedText.cs" />
+    <Compile Include="Text\ScoreParText.cs" />
+    <Compile Include="Text\ScoreMovesText.cs" />
+    <Compile Include="Views\TextView.cs" />
+    <Compile Include="Entities\Area.cs" />
     <Compile Include="Entities\ColourPoint.cs" />
-    <Compile Include="Views\ImageView.cs" />
+    <Compile Include="Entities\ColourSequence.cs" />
+    <Compile Include="Entities\GridBlock.cs" />
+    <Compile Include="Entities\Level.cs" />
+    <Compile Include="Entities\Score.cs" />
+    <Compile Include="Entities\TargetBlock.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Icon.png" />
+    <None Include="Entities\packages.config" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Icon.ico" />
+    <EmbeddedResource Include="Levels\Data\001.json" />
+    <EmbeddedResource Include="Levels\Data\002.json" />
+    <EmbeddedResource Include="Levels\Data\003.json" />
   </ItemGroup>
   <ItemGroup>
     <MonoGameContentReference Include="Content\Content.mgcb" />
@@ -91,11 +101,14 @@
   <Import Project="$(MSBuildExtensionsPath)\MonoGame\v3.0\MonoGame.Content.Builder.targets" />
   <ItemGroup>
     <Folder Include="Screens\" />
-    <Folder Include="Entities\" />
     <Folder Include="Config\" />
     <Folder Include="Components\" />
     <Folder Include="Animations\" />
     <Folder Include="Views\" />
+    <Folder Include="Text\" />
+    <Folder Include="Entities\" />
+    <Folder Include="Levels\" />
+    <Folder Include="Levels\Data\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\evolve\evolve.csproj">

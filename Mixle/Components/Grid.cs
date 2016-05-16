@@ -33,26 +33,25 @@ namespace Mixle.Components {
 			blocks = new List<GridBlock>();
 			level = nextLevel;
 
-			var padHalf = Sizes.Pad / 2;
 			var colour = 0;
-			var currentX = padHalf;
-			var currentY = padHalf;
-			var tile = (Sizes.PlayArea / level.Size) - Sizes.Pad;
+			var currentX = Dimensions.PadHalf;
+			var currentY = Dimensions.PadHalf;
+			var tile = (Dimensions.PlayArea / level.Size) - Dimensions.Pad;
 
 			for(var y = 0; y < level.Size; ++y) {
-				currentX = padHalf;
+				currentX = Dimensions.PadHalf;
 
 				for(var x = 0; x < level.Size; ++x) {
 					var block = new GridBlock(game, level.GetGridColourAtIndex(colour++));
 
 					block.AddArea(currentX, currentY, tile, tile);
 
-					currentX += tile + Sizes.Pad;
+					currentX += tile + Dimensions.Pad;
 
 					blocks.Add(block);
 				}
 
-				currentY += tile + Sizes.Pad;
+				currentY += tile + Dimensions.Pad;
 			}
 		}
 

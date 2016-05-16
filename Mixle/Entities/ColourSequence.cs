@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using Microsoft.Xna.Framework;
 
-namespace Mixle.Config {
+namespace Mixle.Entities {
 	public static class ColourSequence {
 		public static string Red = "RED";
 		public static string Orange = "ORANGE";

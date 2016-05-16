@@ -10,7 +10,7 @@ namespace Mixle.Entities {
 		protected Texture2D texture;
 		protected IList<Area> areas = new List<Area>();
 
-		public GridBlock(MixleGame game, Color colour) {
+		public GridBlock(Game game, Color colour) {
 			Colour = colour;
 			Enabled = false;
 			Visible = true;
@@ -95,7 +95,7 @@ namespace Mixle.Entities {
 		public override void Update(InputEvent evt) { }
 
 		public override void Draw(SpriteBatch renderer) {
-			var displayColour = Active ? new Color(Colour, 0.7f) : Colour;
+			var displayColour = Active ? new Color(Colour, 20) : Colour;
 
 			foreach(var area in areas) {
 				renderer.Draw(texture, area.Rectangle, displayColour);

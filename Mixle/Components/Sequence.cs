@@ -27,12 +27,12 @@ namespace Mixle.Components {
 
 			sequence = new List<TargetBlock>();
 
-			var height = Sizes.InfoHeight - Sizes.SequenceHeight - Sizes.Pad / 2;
-			var width = (Sizes.InfoWidth - Sizes.Pad) / level.Sequence.Length;
-			var currentX = Sizes.PlayArea + Sizes.Pad / 2;
+			var height = Dimensions.InfoHeight - Dimensions.SequenceHeight - Dimensions.PadHalf;
+			var width = (Dimensions.InfoWidth - Dimensions.Pad) / level.Sequence.Length;
+			var currentX = Dimensions.PlayArea + Dimensions.PadHalf;
 
 			for(var i = 0; i < level.Sequence.Length; ++i) {
-				sequence.Add(new TargetBlock(currentX, height, width, Sizes.SequenceHeight, level.GetSequenceColourAtIndex(i)));
+				sequence.Add(new TargetBlock(currentX, height, width, Dimensions.SequenceHeight, level.GetSequenceColourAtIndex(i)));
 
 				currentX += width;
 			}

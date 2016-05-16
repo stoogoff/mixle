@@ -27,12 +27,12 @@ namespace Mixle.Components {
 
 			blocks = new List<TargetBlock>();
 
-			var tile = (Sizes.InfoWidth - Sizes.Pad) / level.Size;
+			var tile = (Dimensions.InfoWidth - Dimensions.Pad) / level.Size;
 			var colour = 0;
 
-			var startX = Sizes.PlayArea + Sizes.Pad / 2;
+			var startX = Dimensions.PlayArea + Dimensions.PadHalf;
 			var currentX = 0;
-			var currentY = Sizes.Pad / 2;
+			var currentY = Dimensions.PadHalf;
 
 			for(var y = 0; y < level.Size; ++y) {
 				currentX = startX;

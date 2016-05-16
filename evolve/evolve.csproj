@@ -50,5 +50,6 @@
     <Compile Include="Components\IView.cs" />
     <Compile Include="Components\IController.cs" />
     <Compile Include="Components\AbstractComponents.cs" />
+    <Compile Include="Components\ImageView.cs" />
   </ItemGroup>
 </Project>
